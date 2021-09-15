@@ -1,0 +1,102 @@
+{% extends 'core/ashion/base_public.html' %}
+{% load static %}
+
+{% block dashboard_content %}
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="{%url 'core:home'%}"><i class="fa fa-home"></i> Home</a>
+                        <span>Métodos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <section class="shop-cart spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="shop__cart__table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>METODO CONTRACEPTIVO</th>
+                                    <th>EFICACIA</th>
+                                   <!--  <th>PRÓS</th>
+                                    <th>CONTRAS</th>-->
+                                    <th>REGIME</th>
+                                    <th>SUGESTÃO</th>
+
+                                    <th>OPÇÕES</th>
+
+hhhhhhhhh
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {%for anti in anti%}
+                              
+                                <tr>
+                                    <td class="cart__product__item">
+
+
+                                       
+                                        {%if anti.metodo.foto%}
+                                        <!--img src="{{anti.foto.url}}" alt="" height="300px">-->
+
+                                        <img src="{{anti.metodo.foto.url}}" width="200px" alt="">
+
+                
+                
+                                        {%else%}
+
+                                        <img src="{% static 'life/images/metodo.jpg'%}" width="200px"  alt="">
+
+                
+                                        {%endif%}
+
+
+                                        <div class="cart__product__item__title">
+                                            <h6>{{anti.metodo.name}}</h6>
+                                            <h6> <small> <small> {{anti.metodo.category}}</small></small> </h6>
+                                          
+                                          
+                                        </div>
+                                    </td>
+
+                                    <td class="cart__price">{{anti.metodo.eficacia}}</td>
+                                
+                                    <!--<td class="cart__total">{{anti.metodo.pros}}</td>
+                                    <td class="cart__total">{{anti.metodo.contra}}</td>-->
+                                    <td class="cart__total">{{anti.metodo.regime}}</td>
+                                    <td class="cart__total">{{anti.total}}</td>
+
+
+                                    <td class="cart__close">
+                                        
+                                        <a href="{%url 'core:detalhes_resultado_teste' anti.metodo.id %}"><i class="fa fa-eye"></i></a>
+                                    
+                                    </td>
+                                </tr>
+                          {%endfor%}
+                       
+                            
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        
+    
+        </div>
+    </section>
+<!-- Contact Section End -->
+
+<!-- Instagram End -->
+{% endblock %}

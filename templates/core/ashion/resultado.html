@@ -1,0 +1,231 @@
+{%load static%}
+ 
+<!DOCTYPE html>
+<html lang="en">
+   <!-- Basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <!-- Mobile Metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- Site Metas -->
+   <title>MÉTODOS CONTRACEPTIVO</title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- Site Icons -->
+   <link rel="shortcut icon" href="{% static 'life/images/fevicon.ico.png'%}" type="image/x-icon" />
+   <link rel="apple-touch-icon" href="{% static 'life/images/apple-touch-icon.png'%}">
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="{% static 'life/css/bootstrap.min.css'%}">
+   <!-- Site CSS -->
+   <link rel="stylesheet" href="{% static 'life/style.css'%}">
+   <!-- Colors CSS -->
+   <link rel="stylesheet" href="{% static 'life/css/colors.css'%}">
+   <!-- ALL VERSION CSS -->
+   <link rel="stylesheet" href="{% static 'life/css/versions.css'%}">
+   <!-- Responsive CSS -->
+   <link rel="stylesheet" href="{% static 'life/css/responsive.css'%}">
+   <!-- Custom CSS -->
+   <link rel="stylesheet" href="{% static 'life/css/custom.css'%}">
+   <!-- Modernizer for Portfolio -->
+   <script src="{% static 'life/js/modernizer.js'%}"></script>
+   <!-- [if lt IE 9] -->
+
+   <link rel="stylesheet" href="{% static 'life/css.css'%}">
+
+   </head>
+   <body class="clinic_version">
+      <!-- LOADER -->
+      <div id="preloader">
+         <img class="preloader" src="{% static 'life/images/loaders/heart-loading2.gif'%}" alt="">
+      </div>
+      <!-- END LOADER -->
+  
+
+
+
+
+     
+     <div id="service" class="services wow fadeIn">
+        <div class="container">
+        
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                   <div class="text-contant">
+                      <h2>
+                         <a href="" class="typewrite" data-period="2000" 
+                         data-type='[ "Com base nas suas respostas,", 
+                         "Os seguintes tipos ","de método anticoncepcional",
+                         "funcionariam bem para você" ]'>
+                         <span class="wrap"></span>
+                         </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      </h2>
+                   </div>
+                </div>
+             </div>
+           <div class="row">
+            <h3>Nota: O anticoncepcional mais proxima do utilizador, deve ser escolhido de cima para baixo!</h3>
+
+           
+            {%for anti in anti%}
+              <div class="col-lg-12 col-md-4 col-sm-6 col-xs-12">
+                 <div class="appointment-form">
+                  <h3><span></span>{{anti.metodo.category}}</h3>
+
+                    <h3>
+                       
+                     <span></span>{{anti.metodo.name}} 
+
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;
+                     
+
+                     <span>Eficacia: </span>{{anti.metodo.eficacia}}
+                  
+                  </h3>
+                    <h3><span>Regime: </span>{{anti.metodo.regime}}</h3>
+                 
+
+
+                    <h3>
+
+                     <a href="{%url 'core:detalhes_resultado_teste' anti.metodo.id %}">Detalhes</a>
+                         
+                  
+                  </h3>
+                 
+                    
+                           
+
+                
+                 </div>
+              </div>
+           
+
+              {%endfor%}
+
+
+           </div>
+        </div>
+     </div>
+
+    
+
+
+
+
+
+
+
+
+      
+      <footer id="footer" class="footer-area wow fadeIn">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-4">
+                  <div class="logo padding">
+                     <a href=""><img src="{% static 'life/images/logo1.png'%}" alt="SISTEMA ESPECIALISTA"></a>
+                     <p>É um sistema de apoio a decisão baseado em logica difusa, que permite armazenar informações que possiblitam as utilizadores escolher o melhor metodo contraceptivo</p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="footer-info padding">
+                     <h3>CONTACTOS</h3>
+                     <p><i class="fa fa-map-marker" aria-hidden="true"></i> ANGOLA, HUÍLA, LUBANGO BAIRRO COMERCIAL</p>
+                     <p><i class="fa fa-paper-plane" aria-hidden="true"></i> anticoncepcional@gmail.com</p>
+                     <p><i class="fa fa-phone" aria-hidden="true"></i> (+244) 935 410 435	</p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="subcriber-info">
+                     <h3>SUBSCREVA</h3>
+                     <p>Receba as novidades da plataforma</p>
+                     <div class="subcriber-box">
+                        <form id="mc-form" class="mc-form">
+                           <div class="newsletter-form">
+                              <input type="email" autocomplete="off" id="mc-email" placeholder="Email address" class="form-control" name="EMAIL">
+                              <button class="mc-submit" type="submit"><i class="fa fa-paper-plane"></i></button> 
+                              <div class="clearfix"></div>
+                              <!-- mailchimp-alerts Start -->
+                              <div class="mailchimp-alerts">
+                                 <div class="mailchimp-submitting"></div>
+                                 <!-- mailchimp-submitting end -->
+                                 <div class="mailchimp-success"></div>
+                                 <!-- mailchimp-success end -->
+                                 <div class="mailchimp-error"></div>
+                                 <!-- mailchimp-error end -->
+                              </div>
+                              <!-- mailchimp-alerts end -->
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <div class="copyright-area wow fadeIn">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-8">
+                  <div class="footer-text">
+                     <p>© 2020 Darlene. Todos os direitos reservados.</p>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="social">
+                     <ul class="social-links">
+                        <li><a href=""><i class="fa fa-rss"></i></a></li>
+                        <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                        <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                        <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href=""><i class="fa fa-youtube"></i></a></li>
+                        <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end copyrights -->
+      <a href="#home" data-scroll class="dmtop global-radius"><i class="fa fa-angle-up"></i></a>
+      <!-- all js files -->
+      <script src="{% static 'life/js/all.js'%}"></script>
+      <script src="{% static 'life/js.js'%}"></script>
+
+      <!-- all plugins -->
+      <script src="{% static 'life/js/custom.js'%}"></script>
+      <!-- map -->
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUPWkb4Cjd7Wxo-T4uoUldFjoiUA1fJc&callback=myMap"></script>
+   </body>
+</html>

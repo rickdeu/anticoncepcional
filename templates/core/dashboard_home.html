@@ -1,0 +1,533 @@
+{% extends 'core/base_public.html' %}
+{% load static %}
+
+{% block dashboard_content %}
+
+    
+      <div id="home" class="parallax first-section wow fadeIn" data-stellar-background-ratio="0.4" style="background-image:url('images/slider-bg.png');">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12 col-sm-12">
+                  <div class="text-contant">
+                     <h2>
+                        <span class="center"><span class="icon"><img src="{% static 'life/images/icon-logo.png'%}" alt="#" /></span></span>
+                        <a href="" class="typewrite" data-period="2000" data-type='[ "SISTEMA ESPECIALISTA", "PARA ESCOLHA DO MELHOR", "MÉTODO CONTRACEPTIVO!" ]'>
+                        <span class="wrap"></span>
+                        </a>
+                     </h2>
+                  </div>
+               </div>
+            </div>
+            <!-- end row -->
+         </div>
+         <!-- end container -->
+      </div>
+      <!-- end section -->
+      <div id="time-table" class="time-table-section">
+         <div class="container">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+               <div class="row">
+                  <div class="service-time one" style="background:#2895f1;">
+                     <span class="info-icon"><i class="fa fa-ambulance" aria-hidden="true"></i></span>
+                     <h3>ERMEGÊNCIA</h3>
+                
+                     <p>
+                        
+                        Evita a gravidez impedindo, 
+                        o encontro do óvulo com o espermatozoide, evitando assim a fecundação.
+                     </p>
+               
+               
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+               <div class="row">
+                  <div class="service-time middle" style="background:#0071d1;">
+                     <span class="info-icon"><i class="fa fa-clock-o" aria-hidden="true"></i></span> 
+                     <h3>DISPONIVEL SEMPRE</h3>
+                     <div class="time-table-section">
+                        <ul>
+                           <li><span class="left">SEGUNDA - SEXTA</span><span class="right">8.00 – 18.00</span></li>
+                           <li><span class="left">SABADO</span><span class="right">8.00 – 16.00</span></li>
+                           <li><span class="left">DOMINGO</span><span class="right">8.00 – 13.00</span></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+               <div class="row">
+                  <div class="service-time three" style="background:#0060b1;">
+                     <span class="info-icon"><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+                     <h3>SISTEMA ESPECIALISTA</h3>
+                     <p>
+
+                        Desenvolvido a partir da necessidade de se processar 
+                        informações e apresentar soluções.
+                        
+                     
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="about" class="section wow fadeIn">
+         <div class="container">
+            <div class="heading">
+               <span class="icon-logo"><img src="{% static 'life/images/icon-logo.png'%}" alt="#"></span>
+               <h2>SISTEMA ESPECIALISTA</h2>
+            </div>
+            <!-- end title -->
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="message-box">
+                     <h4>O QUE É E</h4>
+                     <h2>COMO FUNCIONA</h2>
+                     <p class="lead">É um sistema de apoio a decisão baseado em logica difusa, que permite armazenar informações 
+                        que possiblitam as utilizadores escolher o melhor metodo contraceptivo</p>
+                   
+                   
+                     <p> Através de um conjunto de pergunta, o utilizador seleciona as respostas de acordo as suas caracteristicas e o sistema apresenta um conjunto de sugestões de metodos contraceptivos para uso e com maior segurança! </p>
+                 
+                     <!-- <a href="#services" data-scroll class="btn btn-light btn-radius btn-brd grd1 effect-1">Learn More</a>-->
+                  </div>
+                  <!-- end messagebox -->
+               </div>
+               <!-- end col -->
+               <div class="col-md-6">
+                  <div  class="post-media wow fadeIn">
+                     <img src="{% static 'life/images/hospital_lubango.jpg'%}" alt="" class="img-responsive">
+                     <a href="http://www.youtube.com/watch?v=nrJtHemSPW4" data-rel="prettyPhoto[gal]" class="playbutton"><i class="flaticon-play-button"></i></a>
+                  </div>
+                  <!-- end media -->
+               </div>
+               <!-- end col -->
+            </div>
+            <!-- end row -->
+            <hr class="hr1">
+            <div class="row">
+
+
+
+               {%for cat in cat%}
+               <div class="col-md-3 col-sm-6 col-xs-12">
+                  <div class="service-widget">
+
+                     
+                     {%if cat.foto%}
+                     <div class="post-media wow fadeIn">
+                        <a href="{{cat.foto.url}}"   data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="{{cat.foto.url}}" height="200px" alt="" >
+                     </div>
+                     {%else%}
+                     <div class="post-media wow fadeIn">
+                        <a href="{% static 'life/images/clinic_01.jpg'%}" data-rel="prettyPhoto[gal]" class="hoverbutton global-radius"><i class="flaticon-unlink"></i></a>
+                        <img src="{% static 'life/images/clinic_01.jpg'%}" height="200px" alt="" >
+                     </div>
+                     {%endif%}
+                    
+                    
+                    
+                     <h3>{{cat}}</h3>
+                  </div>
+                  <!-- end service -->
+               </div>
+               {%endfor%}
+               
+          
+
+
+            </div>
+            <!-- end row -->
+         </div>
+         <!-- end container -->
+      </div>
+    
+    
+    
+      <div id="service" class="services wow fadeIn">
+         <div class="container">
+            <div class="row">
+               <div class="col-lg- col-md-8 col-sm-6 col-xs-12">
+                  <div class="inner-services">
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                           <span class="icon-service"><img src="{% static 'life/images/service-icon1.png'%}" alt="#" /></span>
+                           <h4>PLANEAMENTO FAMILIAR</h4>
+                           <p>Ações que auxiliam homens e mulheres a planejar a chegada dos filhos</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                           <span class="icon-service"><img src="{% static 'life/images/service-icon2.png'%}" alt="#" /></span>
+                           <h4>CONSULTAS GINECOLOGISTA</h4>
+                           <p>O ginecologista examina apenas a parte superficial</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                           <span class="icon-service"><img src="{% static 'life/images/service-icon3.png'%}" alt="#" /></span>
+                           <h4>HISTÓRICO MÉDICO</h4>
+                           <p>Relação minuciosa dos elementos,  relativos a determinado doente</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                           <span class="icon-service"><img src="{% static 'life/images/service-icon4.png'%}" alt="#" /></span>
+                           <h4>ANEL VAGINAL</h4>
+                           <p>Após 3 semanas, você deverá remover o anel da vagina.</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                           <span class="icon-service"><img src="{% static 'life/images/service-icon5.png'%}" alt="#" /></span>
+                           <h4>PILULAS</h4>
+                           <p>A pílula combinada apresenta melhor efeito em relação a pele da mulher.</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="serv">
+                           <span class="icon-service"><img src="{% static 'life/images/service-icon6.png'%}" alt="#" /></span>
+                           <h4>INJECTAVEIS</h4>
+                           <p>A injeção anticoncepcional Ciclovular é um contraceptivo mensal</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+           
+           
+               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                  <div class="appointment-form">
+                     <h3><span>+</span>QUESTIONÁRIO</h3>
+                     <div class="form">
+                        <form id="regForm" action="" method="POST">
+                           {% csrf_token %}
+                
+ 
+                           {% if success %}
+           
+                           <p class="alert-success">Operação concluida!</p>
+           
+                           {%endif%}
+           
+                           {{ form.non_field_errors }}
+           
+           
+                            <!-- Uma "div" para cada etapa do formulário. Pode colocar mais elementos -->
+
+                            {%for form in form%}
+ <div class="tab">
+    
+   <h4 style="text-align: justify;">{{form.label}}</h4>
+
+   
+   <p> 
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+         <div class="row">
+
+            
+                {{form}}
+              
+
+         </div>
+         </div>
+   
+   </p>
+
+
+
+ </div>
+ {%endfor%}   
+ 
+ 
+
+
+
+
+
+ <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+   <div class="row">
+      <div class="form-group">
+         <div style="overflow:auto;">
+            <div style="float:right;">
+              <button  type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+              <button  type="button" id="nextBtn" onclick="nextPrev(1)">Proxima</button>
+            </div>
+          </div>
+     
+      </div>
+   </div>
+</div>
+
+
+ <!-- Círculos que indicam as etapas do formulário: -->
+ <div style="text-align:center;margin-top:40px;">
+  
+
+   {%for form in form%}
+   <span class="step"></span>
+
+   {%endfor%}  
+ </div>
+
+ <div style="text-align:center;margin-top:40px;">
+   <p style="text-align: justify;">
+     <b> Obs.:</b> O seguinte questionário ajuda na escolha do melhor metodo contraceptivo!
+   </p>
+   <hr>
+  
+
+ </div>
+                           </fieldset>
+                        </form>
+                     </div>
+                  </div>
+            
+            
+            
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end section -->
+	  
+	  <!-- doctor -->
+	  
+	  <div id="doctors" class="parallax section db" data-stellar-background-ratio="0.4" style="background:#fff;" data-scroll-id="doctors" tabindex="-1">
+        <div class="container">
+		
+		<div class="heading">
+               <span class="icon-logo"><img src="{% static 'life/images/icon-logo.png'%}" alt="#"></span>
+               <h2>MÉTODOS CONTRACEPTIVO</h2>
+            </div>
+
+            <div class="row dev-list text-center">
+         
+
+               {%for anti in anti%}
+                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 wow fadeIn">
+                    <div class="widget clearfix">
+
+
+
+                       
+                        {%if anti.foto%}
+                        <!--img src="{{anti.foto.url}}" alt="" height="300px">-->
+                        <img src="{{anti.foto.url}}" height="300px" alt="">
+
+
+                        {%else%}
+                        <img src="{% static 'life/images/metodo.jpg'%}" height="300px" alt="">
+
+                        {%endif%}
+                      
+                      
+                        <div class="widget-title">
+                            <h3>{{anti}}</h3>
+                            <small>{{anti.category}}</small>
+                        </div>
+                        <!-- end title -->
+                        <p>{{anti.regime}}</p>
+
+                        <div class="footer-social">
+                            <a href="#" class="btn grd1"><i class="fa fa-facebook"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-github"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-twitter"></i></a>
+                            <a href="#" class="btn grd1"><i class="fa fa-linkedin"></i></a>
+                        </div>
+                    </div><!--widget -->
+                </div><!-- end col -->
+
+                {%endfor%}
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div>
+	  
+	 <!-- <div id="price" class="section pr wow fadeIn" style="background-image:url('{% static 'life/images/price-bg.png'%}');">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="tab-content">
+                     <div class="tab-pane active fade in" id="tab1">
+                        <div class="row text-center">
+                           <div class="col-md-4">
+                              <div class="pricing-table">
+                                 <div class="pricing-table-header">
+                                    <h2>Shared Hosting</h2>
+                                    <h3>$85/month</h3>
+                                 </div>
+                                 <div class="pricing-table-features">
+                                    <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                    <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                    <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                    <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                    <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                 </div>
+                                 <div class="pricing-table-sign-up">
+                                    <a href="#contact" data-scroll="" class="btn btn-dark btn-radius btn-brd">Order Now</a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-4">
+                              <div class="pricing-table pricing-table-highlighted">
+                                 <div class="pricing-table-header grd1">
+                                    <h2>WordPress Hosting</h2>
+                                    <h3>$59/year</h3>
+                                 </div>
+                                 <div class="pricing-table-space"></div>
+                                 <div class="pricing-table-text">
+                                    <p>This is a perfect choice for small businesses and startups.</p>
+                                 </div>
+                                 <div class="pricing-table-features">
+                                    <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
+                                    <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
+                                    <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
+                                    <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
+                                    <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                 </div>
+                                 <div class="pricing-table-sign-up">
+                                    <a href="#contact" data-scroll="" class="btn btn-light btn-radius btn-brd grd1 effect-1">Order Now</a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-4">
+                              <div class="pricing-table">
+                                 <div class="pricing-table-header">
+                                    <h2>Reseller Hosting</h2>
+                                    <h3>$85/one-time</h3>
+                                 </div>
+                                 <div class="pricing-table-features">
+                                    <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                    <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                    <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                    <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                    <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                 </div>
+                                 <div class="pricing-table-sign-up">
+                                    <a href="#contact" data-scroll="" class="btn btn-dark btn-radius btn-brd">Order Now</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="tab-pane fade" id="tab2">
+                        <div class="row text-center">
+                           <div class="col-md-6">
+                              <div class="pricing-table">
+                                 <div class="pricing-table-header">
+                                    <h2>Dedicated Server</h2>
+                                    <h3>$85/month</h3>
+                                 </div>
+                                 <div class="pricing-table-space"></div>
+                                 <div class="pricing-table-features">
+                                    <p><i class="fa fa-envelope-o"></i> <strong>250</strong> Email Addresses</p>
+                                    <p><i class="fa fa-rocket"></i> <strong>125GB</strong> of Storage</p>
+                                    <p><i class="fa fa-database"></i> <strong>140</strong> Databases</p>
+                                    <p><i class="fa fa-link"></i> <strong>60</strong> Domains</p>
+                                    <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                 </div>
+                                 <div class="pricing-table-sign-up">
+                                    <a href="#contact" data-scroll="" class="btn btn-dark btn-radius btn-brd">Order Now</a>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-md-6">
+                              <div class="pricing-table pricing-table-highlighted">
+                                 <div class="pricing-table-header grd1">
+                                    <h2>VPS Server</h2>
+                                    <h3>$59/month</h3>
+                                 </div>
+                                 <div class="pricing-table-space"></div>
+                                 <div class="pricing-table-text">
+                                    <p>This is a perfect choice for small businesses and startups.</p>
+                                 </div>
+                                 <div class="pricing-table-features">
+                                    <p><i class="fa fa-envelope-o"></i> <strong>150</strong> Email Addresses</p>
+                                    <p><i class="fa fa-rocket"></i> <strong>65GB</strong> of Storage</p>
+                                    <p><i class="fa fa-database"></i> <strong>60</strong> Databases</p>
+                                    <p><i class="fa fa-link"></i> <strong>30</strong> Domains</p>
+                                    <p><i class="fa fa-life-ring"></i> <strong>24/7 Unlimited</strong> Support</p>
+                                 </div>
+                                 <div class="pricing-table-sign-up">
+                                    <a href="#contact" data-scroll="" class="btn btn-light btn-radius btn-brd grd1 effect-1">Order Now</a>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>-->
+	  
+	  <!-- end doctor section -->
+	  
+      <div id="testimonials" class="section wb wow fadeIn">
+         <div class="container">
+            <div class="heading">
+               <span class="icon-logo"><img src="{% static 'life/images/icon-logo.png'%}" alt="#"></span>
+               <h2>TESTEMUNHAS</h2>
+            </div>
+      
+            <!-- end row -->
+            <hr class="invis">
+            <div class="row">
+               <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                  <div class="testimonial clearfix">
+                     <div class="desc">
+                        <h3><i class="fa fa-quote-left"></i> Maravilha, o que precisava!</h3>
+                        <p class="lead">Ajudou bastante a minha esposa, quando precisavamos de um metodo contraceptivo adequado.</p>
+                     </div>
+                     <div class="testi-meta">
+                        <img src="{% static 'life/images/geovana.jpg'%}" alt="" class="img-responsive alignleft">
+                        <h4>Geovana Agatha <small>- Estudante -</small></h4>
+                     </div>
+                     <!-- end testi-meta -->
+                  </div>
+                  <!-- end testimonial -->
+               </div>
+               <!-- end col -->
+               <div class="col-md-6 col-sm-12 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.8s">
+                  <div class="testimonial clearfix">
+                     <div class="desc">
+                        <h3><i class="fa fa-quote-left"></i> O melhor que existe em Angola</h3>
+                        <p class="lead">Ajudou bastante a minha esposa, quando precisavamos de um metodo contraceptivo adequado.</p>
+                     </div>
+                     <div class="testi-meta">
+                        <img src="{% static 'life/images/darlene.jpg'%}" alt="" class="img-responsive alignleft">
+                        <h4>Darlene Mateus<small>- Founder -</small></h4>
+                     </div>
+                     <!-- end testi-meta -->
+                  </div>
+                  <!-- end testimonial -->
+               </div>
+               <!-- end col -->
+            </div>
+            <!-- end row -->
+         </div>
+         <!-- end container -->
+      </div>
+      
+
+
+
+
+
+
+
+
+
+<!-- Instagram End -->
+{% endblock %}

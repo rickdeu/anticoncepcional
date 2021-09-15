@@ -1,0 +1,152 @@
+{% extends 'core/ashion/base_public.html' %}
+{% load static %}
+
+{% block dashboard_content %}
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="./index.html"><i class="fa fa-home"></i> Home</a>
+                        <a href="#">MÉTODOS </a>
+                        <span>{{obj}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="product__details__pic">
+                        <div class="product__details__pic__left product__thumb nice-scroll">
+                            <a class="pt active" href="#product-1">
+                               
+                               
+                            
+                                {%if obj.foto%}
+                                <!--img src="{{anti.foto.url}}" alt="" height="300px">-->
+
+                                <img src="{{obj.foto.url}}" alt="">
+
+        
+        
+                                {%else%}
+
+                                <img src="% static 'life/images/metodo.jpg'%}" alt="">
+
+        
+                                {%endif%}
+                          
+                          
+                            </a>
+                         
+                        </div>
+                        <div class="product__details__slider__content">
+                            <div class="product__details__pic__slider owl-carousel">
+                              
+                            
+                                                
+                                {%if obj.foto%}
+                                <!--img src="{{anti.foto.url}}" alt="" height="300px">-->
+
+              
+        
+        
+                                {%else%}
+
+            
+                                
+                                <img data-hash="product-1" class="product__big__img" src="{% static 'life/images/metodo.jpg'%}" alt="">
+
+
+        
+                                {%endif%}
+                                
+                          
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="product__details__text">
+                        <h3>{{obj}} <span>Categoria: {{obj.category}}</span></h3>
+                        <hr>
+                     
+                        <p>{{obj.descurta}}</p>
+                 
+                        
+
+                        <div class="product__details__widget">
+                            <ul>
+                                <li>
+                                    <span>Eficacia:</span>
+                                    <div class="stock__checkbox">
+                                        <label for="stockin">
+                                            {{obj.eficacia}}
+                                            <input type="checkbox" id="stockin">
+                                            <span class="checkmark"></span>
+                                        </label>
+                                    </div>
+                                </li>
+                       
+                                <li>
+                                    <span>Regime:</span>
+                                    <p>{{obj.regime}}</p>
+                                </li>
+
+                                <li>
+                                    <span>DST:</span>
+                                    <p>Não previme DST</p>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="product__details__tab">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">PRÓS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">CONTRA</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">DESCRIÇÃO</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="tabs-1" role="tabpanel">
+                                <h6>Prós</h6>
+
+                                <p>{{obj.pros}}</p>
+                            
+                            </div>
+                            <div class="tab-pane" id="tabs-2" role="tabpanel">
+                                <h6>Contra</h6>
+                                <p>{{obj.contra}}</p>
+                             
+                            </div>
+                            <div class="tab-pane" id="tabs-3" role="tabpanel">
+                                <h6>Breve descrição</h6>
+                                <p>{{obj.descurta}}</p>
+                                <p>{{obj.deslonga}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+    </section>
+    <!-- Product Details Section End -->
+
+    <!-- Instagram End -->
+    {% endblock %}

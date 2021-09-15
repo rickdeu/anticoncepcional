@@ -1,0 +1,156 @@
+{% extends 'core/ashion/base_public.html' %}
+{% load static %}
+
+{% block dashboard_content %}
+
+    <!-- Breadcrumb Begin -->
+    <div class="breadcrumb-option">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcrumb__links">
+                        <a href="{%url 'core:home'%}"><i class="fa fa-home"></i> Home</a>
+                        <span>ESCOLHA DO MELHOR METODO ANTICONCEPCIONAL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+    <!-- Contact Section Begin -->
+    <section class="contact spad">
+        <div class="container">
+            <form id="regForm" action="#" method="POST">
+                {% csrf_token %}
+                
+
+                {% if success %}
+
+                <p class="alert-success">Membro cadastrado!</p>
+
+                {%endif%}
+
+                {{ form.non_field_errors }}
+
+
+
+            {%for form in form%}
+            <div class="container tab">
+
+            <div class="row">
+               
+               
+
+
+
+
+
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__content">
+                  
+                        <div class="contact__form">
+                            <h6 style="text-align: justify;">
+                                Faça à cliente as perguntas abaixo quanto a problemas médicos que
+                                sejam do seu conhecimento. Não é necessário realizar exames ou
+                                testes. Caso ela responda “não” para todas as perguntas, signifi ca
+                                que ela pode começar a utilizar AOCs se assim desejar. Caso ela
+                                responda “sim” a alguma questão, siga as instruções indicadas. Em
+                                alguns casos mesmo assim ela poderá iniciar o uso de AOCs. Estas
+                                perguntas também se aplicam para o adesivo combinado
+                            
+
+                            </h6>
+                            <hr>
+                               <!--  <input type="checkbox" placeholder="{{form.label}}">
+                               <input type="text" placeholder="Email">
+                                <input type="text" placeholder="Website">
+                                <textarea placeholder="Message"></textarea>
+                          
+                            -->
+<hr>
+                            <div class="checkout__order__widget">
+                                <label for="o-acc-{{form.name}}">
+                                    {{form.label}}
+                                    <input type="checkbox" name="{{form.name}}" id="o-acc-{{form.name}}">
+                                    <span class="checkmark"></span>
+                                </label>
+                              <label>{{form.id}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="contact__content">
+                        <div class="contact__address">
+                          
+                            <div style="overflow:auto;">
+                                <div style="float:right;">
+                                  <button type="button" id="prevBtn" class="btn btn-primary pull-left" onclick="nextPrev(-1)">Anterior</button>
+                                  <button type="button" id="nextBtn" class="btn btn-primary pull-right" onclick="nextPrev(1)">Proxima</button>
+                                </div>
+                              </div>
+                              <br>
+                    
+
+                            <div class="row">
+                                <div class="col-lg-12 p-0">
+                                    <div class="categories__item categories__large__item set-bg"
+                                    data-setbg="{% static 'home/img/categories/category-5.jpg'%}">
+                                    <div class="categories__text">
+                                       <!-- <h1>{{form.label}}</h1>-->
+                                        <p>
+                                            {{form.label}}
+                                    </p>
+                                        <a href="#"> {{form.label}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       
+                       
+                       
+                        </div>
+                  
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+              
+        </div>
+    </div>
+        {%endfor%}
+
+      
+        
+        <div style="text-align:center;margin-top:40px;">
+
+            {%for form in form%}
+            <span class="step"></span>
+
+            {%endfor%}
+            <br>
+            <span class="step1"> 1 de 9</span>
+
+
+          </div>
+        </form>
+
+    </div>
+</section>
+<!-- Contact Section End -->
+
+<!-- Instagram End -->
+{% endblock %}

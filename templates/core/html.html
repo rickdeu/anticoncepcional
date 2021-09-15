@@ -1,0 +1,46 @@
+<!-- HTML -->
+<html>
+  <head>
+    <title>FORM</title>
+    <link href="css.css" rel="stylesheet" />
+
+  </head>
+  <body>
+
+<form id="regForm" action="https://pt.stackoverflow.com/unanswered">
+  <h1>Registrar</h1>
+  <!-- Uma "div" para cada etapa do formulário. Pode colocar mais elementos -->
+  <div class="tab">Nome:
+    <p><input placeholder="Nome..." oninput="this.className = ''" name="nome"></p>
+  </div>
+  <div class="tab">Idade:
+    <p><input placeholder="Idade..." oninput="this.className = ''" name="idade"></p>
+  </div>
+  <div class="tab">Local de nascimento:
+    <p>Estado <input placeholder="Estado..." oninput="this.className = ''" name="estado"> 
+    <p>Cidade <input placeholder="Cidade..." oninput="this.className = ''" name="cidade"></p>
+  </div>
+  <div class="tab">Data de Nascimento:
+    <p><input placeholder="Data de Nascimento..." oninput="this.className = ''" name="nascimento"></p>
+  </div>
+  <div style="overflow:auto;">
+    <div style="float:right;">
+      <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+      <button type="button" id="nextBtn" onclick="nextPrev(1)">Proxima</button>
+    </div>
+  </div>
+  <!-- Círculos que indicam as etapas do formulário: -->
+  <div style="text-align:center;margin-top:40px;">
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+</form>
+
+<script src="js.js"></script>
+
+
+  </body>
+</html>
+
